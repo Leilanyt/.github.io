@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leilany Torres Diaz</title>
+  <meta name="description" content="Leilany Torres Diaz — Research Assistant at the Phelps Lab, Harvard. Computational psychiatry, fMRI, and science communication." />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,400i,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --color-bg:#f5f2ed;--color-surface:#f9f7f3;--color-surface-2:#fdfcfa;
+      --color-surface-offset:#ede9e2;--color-divider:#dbd6ce;--color-border:#cec9c1;
+      --color-text:#2a2520;--color-text-muted:#7a7268;--color-text-faint:#b5b0a8;
+      --color-primary:#7a5c3b;--color-primary-hover:#5e4228;
+      --color-primary-hl:#e8ddd0;--color-accent:#4a7c59;
+      --shadow-sm:0 1px 3px rgba(42,37,32,.07);--shadow-md:0 4px 16px rgba(42,37,32,.09);--shadow-lg:0 12px 40px rgba(42,37,32,.13);
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-full:9999px;
+      --transition:180ms cubic-bezier(0.16,1,0.3,1);
+      --content-narrow:640px;--content-default:960px;--content-wide:1200px;
+      --font-display:'Zodiak',Georgia,serif;--font-body:'Satoshi','Helvetica Neue',sans-serif;
+      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+      --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+      --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --text-3xl:clamp(2.5rem,1rem + 4vw,5rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;
+      --space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;
+      --space-16:4rem;--space-20:5rem;--space-24:6rem;
+    }
+    [data-theme="dark"]{
+      --color-bg:#1a1714;--color-surface:#201d19;--color-surface-2:#252119;
+      --color-surface-offset:#2a261f;--color-divider:#302b24;--color-border:#3a352d;
+      --color-text:#e0d9d0;--color-text-muted:#8a8278;--color-text-faint:#5e5a54;
+      --color-primary:#c49a72;--color-primary-hover:#d9b490;
+      --color-primary-hl:#3d3028;--color-accent:#7cb88c;
+      --shadow-sm:0 1px 3px rgba(0,0,0,.25);--shadow-md:0 4px 16px rgba(0,0,0,.35);--shadow-lg:0 12px 40px rgba(0,0,0,.45);
+    }
+    @media(prefers-color-scheme:dark){:root:not([data-theme]){
+      --color-bg:#1a1714;--color-surface:#201d19;--color-surface-2:#252119;
+      --color-surface-offset:#2a261f;--color-divider:#302b24;--color-border:#3a352d;
+      --color-text:#e0d9d0;--color-text-muted:#8a8278;--color-text-faint:#5e5a54;
+      --color-primary:#c49a72;--color-primary-hover:#d9b490;
+      --color-primary-hl:#3d3028;--color-accent:#7cb88c;
+      --shadow-sm:0 1px 3px rgba(0,0,0,.25);--shadow-md:0 4px 16px rgba(0,0,0,.35);--shadow-lg:0 12px 40px rgba(0,0,0,.45);
+    }}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);line-height:1.65;transition:background var(--transition),color var(--transition)}
+    img,svg{display:block;max-width:100%;height:auto}
+    h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+    p,li{text-wrap:pretty;max-width:72ch}
+    a,button{transition:color var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition)}
+    a{color:var(--color-primary);text-decoration:none}
+    a:hover{color:var(--color-primary-hover)}
+    button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+    ::selection{background:rgba(122,92,59,.18);color:var(--color-text)}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    .container{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),5vw,var(--space-12))}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(245,242,237,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider);padding-block:var(--space-4);transition:background var(--transition)}
+    [data-theme="dark"] .nav{background:rgba(26,23,20,.92)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)}
+    .nav__logo{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;color:var(--color-text)}
+    .nav__name{font-family:var(--font-display);font-size:var(--text-sm);font-weight:700;letter-spacing:-.01em}
+    .nav__links{display:flex;align-items:center;gap:var(--space-6);list-style:none}
+    .nav__links a{font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted);padding-block:var(--space-1);border-bottom:2px solid transparent;text-decoration:none}
+    .nav__links a:hover,.nav__links a.active{color:var(--color-text);border-bottom-color:var(--color-primary)}
+    .nav__controls{display:flex;gap:var(--space-2);align-items:center}
+    .icon-btn{padding:var(--space-2);border-radius:var(--radius-md);color:var(--color-text-muted);min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
+    .icon-btn:hover{background:var(--color-surface-offset);color:var(--color-text)}
+    .nav__mobile-btn{display:none}
+    @media(max-width:640px){
+      .nav__links{display:none;flex-direction:column;align-items:flex-start;gap:var(--space-2);position:absolute;top:100%;left:0;right:0;background:var(--color-surface);border-bottom:1px solid var(--color-divider);padding:var(--space-4) clamp(var(--space-4),5vw,var(--space-12))}
+      .nav__links.open{display:flex}
+      .nav__mobile-btn{display:flex}
+    }
+
+    /* HERO */
+    .hero{padding-block:clamp(var(--space-16),10vw,var(--space-24))}
+    .hero__grid{display:grid;grid-template-columns:1fr 260px;gap:var(--space-16);align-items:center}
+    .hero__eyebrow{font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--color-primary);margin-bottom:var(--space-4)}
+    .hero__name{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:var(--space-6);color:var(--color-text)}
+    .hero__name em{font-style:italic;color:var(--color-primary)}
+    .hero__bio{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.8;margin-bottom:var(--space-8);max-width:58ch}
+    .hero__bio strong{color:var(--color-text);font-weight:600}
+    .hero__links{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-5);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:600;cursor:pointer;text-decoration:none;min-height:44px}
+    .btn--primary{background:var(--color-primary);color:#f9f7f3}
+    .btn--primary:hover{background:var(--color-primary-hover);color:#f9f7f3}
+    .btn--ghost{border:1px solid var(--color-border);color:var(--color-text-muted)}
+    .btn--ghost:hover{background:var(--color-surface-offset);color:var(--color-text);border-color:var(--color-text-muted)}
+    .hero__photo-placeholder{width:100%;aspect-ratio:3/4;border-radius:var(--radius-xl);background:var(--color-surface-offset);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-4);color:var(--color-text-faint);font-size:var(--text-sm);box-shadow:var(--shadow-lg);border:2px dashed var(--color-border)}
+    .hero__badge{margin-top:var(--space-3);text-align:center;font-size:var(--text-xs);color:var(--color-text-muted);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-3) var(--space-4);box-shadow:var(--shadow-sm)}
+    @media(max-width:700px){.hero__grid{grid-template-columns:1fr}.hero__photo-placeholder{max-width:180px;margin-inline:auto}}
+
+    /* SECTIONS */
+    section{padding-block:clamp(var(--space-12),8vw,var(--space-20))}
+    .section-label{font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--color-primary);margin-bottom:var(--space-3)}
+    .section-title{font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;letter-spacing:-.02em;margin-bottom:var(--space-8);color:var(--color-text)}
+    .section-divider{border:none;border-top:1px solid var(--color-divider)}
+    .alt-bg{background:var(--color-surface)}
+
+    /* NEWS */
+    .news__list{display:flex;flex-direction:column}
+    .news__item{display:grid;grid-template-columns:100px 1fr;gap:var(--space-6);align-items:baseline;padding-block:var(--space-4);border-bottom:1px solid var(--color-divider)}
+    .news__item:last-child{border-bottom:none}
+    .news__date{font-size:var(--text-xs);color:var(--color-text-faint);font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
+    .news__text{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.65}
+    .news__text strong{color:var(--color-text);font-weight:600}
+    .news__badge{display:inline-block;font-size:var(--text-xs);font-weight:700;padding:2px var(--space-2);border-radius:var(--radius-full);margin-right:var(--space-2)}
+    .badge--conf{background:var(--color-primary-hl);color:var(--color-primary)}
+    .badge--award{background:rgba(74,124,89,.15);color:var(--color-accent)}
+    @media(max-width:500px){.news__item{grid-template-columns:1fr;gap:var(--space-1)}}
+
+    /* RESEARCH */
+    .research__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(400px,100%),1fr));gap:var(--space-6)}
+    .paper-card{background:var(--color-surface);border:1px solid rgba(42,37,32,.08);border-radius:var(--radius-lg);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);box-shadow:var(--shadow-sm);transition:box-shadow var(--transition),transform var(--transition)}
+    .paper-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .paper-card__venue{font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-primary)}
+    .paper-card__title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--color-text);line-height:1.25}
+    .paper-card__desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.65;flex:1}
+    .paper-card__tags{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:auto;padding-top:var(--space-2)}
+    .tag{font-size:var(--text-xs);font-weight:600;padding:3px var(--space-3);border-radius:var(--radius-full);background:var(--color-surface-offset);color:var(--color-text-muted)}
+
+    /* BLOG */
+    .blog__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:var(--space-6)}
+    .blog-card{background:var(--color-bg);border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(42,37,32,.07);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:box-shadow var(--transition),transform var(--transition)}
+    .blog-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .blog-card__img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-faint)}
+    .blog-card__body{padding:var(--space-5);display:flex;flex-direction:column;gap:var(--space-3);flex:1}
+    .blog-card__cat{font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent)}
+    .blog-card__title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--color-text);line-height:1.3}
+    .blog-card__excerpt{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.65;flex:1}
+    .blog-card__meta{font-size:var(--text-xs);color:var(--color-text-faint);margin-top:auto}
+
+    /* ABOUT */
+    .about__grid{display:grid;grid-template-columns:1fr 300px;gap:var(--space-16);align-items:start}
+    .about__body{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.8}
+    .about__body p+p{margin-top:var(--space-5)}
+    .about__body strong{color:var(--color-text);font-weight:600}
+    .about__sidebar{display:flex;flex-direction:column;gap:var(--space-5)}
+    .sidebar-card{background:var(--color-surface);border:1px solid rgba(42,37,32,.08);border-radius:var(--radius-lg);padding:var(--space-5)}
+    .sidebar-card__label{font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-faint);margin-bottom:var(--space-3)}
+    .sidebar-card__list{list-style:none;display:flex;flex-direction:column;gap:var(--space-3)}
+    .sidebar-card__list li{font-size:var(--text-sm);color:var(--color-text-muted);display:flex;align-items:center;gap:var(--space-2)}
+    .sidebar-card__list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--color-primary);flex-shrink:0}
+    @media(max-width:700px){.about__grid{grid-template-columns:1fr}}
+
+    /* TIMELINE */
+    .timeline{display:flex;flex-direction:column}
+    .timeline__item{display:grid;grid-template-columns:140px 1fr;gap:var(--space-6);padding-block:var(--space-6);border-bottom:1px solid var(--color-divider)}
+    .timeline__item:last-child{border-bottom:none}
+    .timeline__year{font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-text-faint);padding-top:3px}
+    .timeline__role{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--color-text)}
+    .timeline__org{font-size:var(--text-sm);color:var(--color-primary);font-weight:600;margin-bottom:var(--space-2)}
+    .timeline__desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.65}
+    @media(max-width:500px){.timeline__item{grid-template-columns:1fr;gap:var(--space-2)}}
+
+    /* FOOTER */
+    footer{padding-block:var(--space-10);border-top:1px solid var(--color-divider)}
+    .footer__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap}
+    .footer__copy{font-size:var(--text-xs);color:var(--color-text-faint)}
+    .footer__links{display:flex;gap:var(--space-5)}
+    .footer__links a{font-size:var(--text-xs);color:var(--color-text-faint);text-decoration:none}
+    .footer__links a:hover{color:var(--color-primary)}
+
+    @supports(animation-timeline:scroll()){
+      .fade-in{opacity:0;animation:reveal-fade linear both;animation-timeline:view();animation-range:entry 0% entry 80%}
+      @keyframes reveal-fade{to{opacity:1}}
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="sr-only">Skip to content</a>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="Home — Leilany Torres Diaz">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#7a5c3b" opacity="0.12"/>
+          <path d="M8 24 L16 8 L24 24" stroke="#7a5c3b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="17" r="3.5" fill="#7a5c3b" opacity="0.4"/>
+        </svg>
+        <span class="nav__name">Leilany Torres Diaz</span>
+      </a>
+      <ul class="nav__links" id="nav-menu" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="mailto:leilany@harvard.edu">Contact</a></li>
+      </ul>
+      <div class="nav__controls">
+        <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="icon-btn nav__mobile-btn" id="mobile-toggle" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section class="hero" id="about" aria-label="Introduction">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <p class="hero__eyebrow">Research Assistant &middot; Phelps Lab &middot; Harvard</p>
+          <h1 class="hero__name">Leilany<br><em>Torres Diaz</em></h1>
+          <p class="hero__bio">
+            I do research at the intersection of <strong>computational psychiatry</strong>, <strong>memory &amp; emotion</strong>, and <strong>fMRI</strong>. Currently an RA at the Phelps Lab (Harvard), where I work with clinical imaging data and build computational pipelines to study how brain connectivity tracks transdiagnostic psychiatric symptoms. Previously trained at Harvard&rsquo;s <strong>Kempner Institute</strong>.
+          </p>
+          <div class="hero__links">
+            <a href="#research" class="btn btn--primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              View Research
+            </a>
+            <a href="#writing" class="btn btn--ghost">Writing</a>
+            <a href="https://github.com/Leilanyt" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.92.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/leilany-torres-diaz/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">LinkedIn</a>
+          </div>
+        </div>
+        <div>
+          <div class="hero__photo-placeholder" role="img" aria-label="Profile photo placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" style="color:var(--color-text-faint)"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span style="font-size:var(--text-xs);color:var(--color-text-faint);text-align:center;padding:0 var(--space-4)">Replace with your photo<br><code style="font-size:10px">&lt;img src="photo.jpg" ...&gt;</code></span>
+          </div>
+          <div class="hero__badge">&#128205; Cambridge, MA &nbsp;&middot;&nbsp; PhD applicant &rsquo;27</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="alt-bg" id="news" aria-label="Recent news">
+    <div class="container">
+      <p class="section-label">Updates</p>
+      <h2 class="section-title">News</h2>
+      <div class="news__list" role="list">
+        <div class="news__item fade-in" role="listitem">
+          <span class="news__date">Jul 2026</span>
+          <p class="news__text"><span class="news__badge badge--conf">Poster</span><strong>Presented at CPConf 2026</strong> &mdash; <em>&ldquo;Resting-State Network Connectivity and Transdiagnostic Psychosis-like Symptoms: A CPM Approach.&rdquo;</em></p>
+        </div>
+        <div class="news__item fade-in" role="listitem">
+          <span class="news__date">Jul 2026</span>
+          <p class="news__text">Joined the <strong>Phelps Lab at Harvard</strong> as a Research Assistant &mdash; memory, emotion, and clinical fMRI.</p>
+        </div>
+        <div class="news__item fade-in" role="listitem">
+          <span class="news__date">Jun 2026</span>
+          <p class="news__text">Completed the <strong>Kempner Institute Post-Baccalaureate Program</strong> &mdash; a two-year, master&rsquo;s-equivalent research experience in computational neuroscience.</p>
+        </div>
+        <div class="news__item fade-in" role="listitem">
+          <span class="news__date">Mar 2026</span>
+          <p class="news__text">Released <a href="https://github.com/Leilanyt" target="_blank" rel="noopener noreferrer"><strong>rsFC-Predictive-Pipeline</strong></a> on GitHub &mdash; an open CPM pipeline for resting-state fMRI.</p>
+        </div>
+        <div class="news__item fade-in" role="listitem">
+          <span class="news__date">2025</span>
+          <p class="news__text"><span class="news__badge badge--award">CCN</span>Poster at <strong>Conference on Cognitive Computational Neuroscience</strong> &mdash; DNN&ndash;brain alignment in vision models.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section id="research" aria-label="Research and publications">
+    <div class="container">
+      <p class="section-label">Publications &amp; Projects</p>
+      <h2 class="section-title">Research</h2>
+      <div class="research__grid">
+        <article class="paper-card fade-in">
+          <p class="paper-card__venue">CPConf 2026 &middot; Poster</p>
+          <h3 class="paper-card__title">Resting-State Connectivity &amp; Transdiagnostic Psychosis-like Symptoms</h3>
+          <p class="paper-card__desc">Used a 5-fold CPM pipeline with ridge regression on 7-network resting-state connectivity to predict BPRS-positive symptoms across bipolar disorder, schizophrenia, and ADHD &mdash; supporting an RDoC-style dimensional view of psychosis.</p>
+          <div class="paper-card__tags">
+            <span class="tag">CPM</span><span class="tag">fMRI</span><span class="tag">RDoC</span><span class="tag">Ridge Regression</span><span class="tag">Transdiagnostic</span>
+          </div>
+        </article>
+        <article class="paper-card fade-in">
+          <p class="paper-card__venue">CCN 2025 &middot; Poster</p>
+          <h3 class="paper-card__title">DNN&ndash;Brain Alignment in Vision Models</h3>
+          <p class="paper-card__desc">Investigated alignment between deep neural network representations and human brain responses using RSA. Explored how architecture and training objectives shape alignment across the visual cortex hierarchy.</p>
+          <div class="paper-card__tags">
+            <span class="tag">RSA</span><span class="tag">DNN</span><span class="tag">Vision</span><span class="tag">fMRI</span><span class="tag">Kempner</span>
+          </div>
+        </article>
+        <article class="paper-card fade-in">
+          <p class="paper-card__venue">GitHub &middot; Open Source</p>
+          <h3 class="paper-card__title">rsFC-Predictive-Pipeline</h3>
+          <p class="paper-card__desc">An open-source CPM pipeline for resting-state fMRI: within-fold edge selection, multiple regularized regression models (ridge, elastic net, PCR), and out-of-sample evaluation on clinical symptom dimensions.</p>
+          <div class="paper-card__tags">
+            <span class="tag">Python</span><span class="tag">Nilearn</span><span class="tag">scikit-learn</span><span class="tag">CPM</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="alt-bg" id="writing" aria-label="Science writing and blog">
+    <div class="container">
+      <p class="section-label">Science Communication</p>
+      <h2 class="section-title">Writing</h2>
+      <p style="font-size:var(--text-base);color:var(--color-text-muted);margin-bottom:var(--space-8);max-width:60ch;line-height:1.75;">I write about computational psychiatry, brain methods, and navigating science as a first-gen Latina researcher. Honest, accessible, always curious.</p>
+      <div class="blog__grid">
+        <article class="blog-card fade-in">
+          <div class="blog-card__img" style="background:linear-gradient(135deg,#e8ddd0,#d4c9b8)" aria-hidden="true">Methods</div>
+          <div class="blog-card__body">
+            <p class="blog-card__cat">Methods Explained</p>
+            <h3 class="blog-card__title">What is CPM &mdash; and why does it matter for psychiatry?</h3>
+            <p class="blog-card__excerpt">Breaking down Connectome-based Predictive Modeling: how brain connectivity fingerprints can predict behavior, and what it means to test that transdiagnostically.</p>
+            <p class="blog-card__meta">Coming soon</p>
+          </div>
+        </article>
+        <article class="blog-card fade-in">
+          <div class="blog-card__img" style="background:linear-gradient(135deg,#d4dfd7,#c2d4c6)" aria-hidden="true">RDoC</div>
+          <div class="blog-card__body">
+            <p class="blog-card__cat">Big Ideas</p>
+            <h3 class="blog-card__title">Why RDoC might finally bridge neuroscience and psychiatry</h3>
+            <p class="blog-card__excerpt">The DSM groups people by symptoms. RDoC groups them by circuits. Here&rsquo;s why that shift matters &mdash; and where the field still falls short.</p>
+            <p class="blog-card__meta">Coming soon</p>
+          </div>
+        </article>
+        <article class="blog-card fade-in">
+          <div class="blog-card__img" style="background:linear-gradient(135deg,#ddd5c8,#c8bfb0)" aria-hidden="true">Journey</div>
+          <div class="blog-card__body">
+            <p class="blog-card__cat">Personal</p>
+            <h3 class="blog-card__title">On being a first-gen Latina in computational neuroscience</h3>
+            <p class="blog-card__excerpt">What no one tells you about building a research identity when you don&rsquo;t see yourself in the field &mdash; and why I started writing about it anyway.</p>
+            <p class="blog-card__meta">Coming soon</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section id="more-about" aria-label="Full about section">
+    <div class="container">
+      <p class="section-label">Background</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="about__grid">
+        <div class="about__body">
+          <p>I&rsquo;m a researcher with a background in <strong>Neurobiology</strong> and a deep interest in how the brain implements emotion, memory, and the features that go awry in psychiatric illness. My current work at the <strong>Phelps Lab</strong> gives me the chance to work with clinical fMRI data while building toward a PhD in computational psychiatry.</p>
+          <p>I spent two years at <strong>Harvard&rsquo;s Kempner Institute</strong> training in computational cognitive neuroscience &mdash; taking graduate courses, running independent projects in DNN-to-brain alignment, and learning the methods that now anchor my research identity: <strong>connectome-based predictive modeling, cross-validation design, regularized regression, and representational similarity analysis</strong>.</p>
+          <p>I care about making science accessible &mdash; especially for curious young women who don&rsquo;t see themselves reflected in technical research spaces. This site is part of that effort: a place to share methods in plain language, document the journey honestly, and connect with people asking similar questions.</p>
+          <p>When I&rsquo;m not in the lab, I&rsquo;m reading about canine cognition, exploring neurotech startups, or watching my Australian border collie mix figure out something she absolutely shouldn&rsquo;t.</p>
+        </div>
+        <div class="about__sidebar">
+          <div class="sidebar-card">
+            <p class="sidebar-card__label">Research Interests</p>
+            <ul class="sidebar-card__list" role="list">
+              <li>Computational psychiatry</li>
+              <li>Memory &amp; emotion (fMRI)</li>
+              <li>Transdiagnostic symptom modeling</li>
+              <li>Connectome-based prediction</li>
+              <li>Cross-species neuro methods</li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <p class="sidebar-card__label">Methods &amp; Tools</p>
+            <ul class="sidebar-card__list" role="list">
+              <li>CPM &middot; RSA &middot; GLM</li>
+              <li>Ridge / Elastic Net / PCR</li>
+              <li>fMRI preprocessing (Nilearn)</li>
+              <li>Python &middot; scikit-learn &middot; PyTorch</li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <p class="sidebar-card__label">Find Me</p>
+            <ul class="sidebar-card__list" role="list">
+              <li><a href="https://github.com/Leilanyt" target="_blank" rel="noopener noreferrer">github.com/Leilanyt</a></li>
+              <li><a href="https://www.linkedin.com/in/leilany-torres-diaz/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="mailto:leilany@harvard.edu">leilany@harvard.edu</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <section class="alt-bg" id="cv" aria-label="CV and experience">
+    <div class="container">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">CV Highlights</h2>
+      <div class="timeline">
+        <div class="timeline__item fade-in">
+          <span class="timeline__year">2026 &ndash; now</span>
+          <div>
+            <p class="timeline__role">Research Assistant</p>
+            <p class="timeline__org">Phelps Lab &middot; Harvard University</p>
+            <p class="timeline__desc">Clinical fMRI data, memory &amp; emotion research, and independent computational psychiatry projects.</p>
+          </div>
+        </div>
+        <div class="timeline__item fade-in">
+          <span class="timeline__year">2024 &ndash; 2026</span>
+          <div>
+            <p class="timeline__role">Post-Baccalaureate Researcher</p>
+            <p class="timeline__org">Kempner Institute &middot; Harvard University</p>
+            <p class="timeline__desc">Graduate-level coursework and independent projects in DNN-brain alignment and computational cognitive neuroscience.</p>
+          </div>
+        </div>
+        <div class="timeline__item fade-in">
+          <span class="timeline__year">2025</span>
+          <div>
+            <p class="timeline__role">Poster Presenter</p>
+            <p class="timeline__org">CCN 2025 &middot; Conference on Cognitive Computational Neuroscience</p>
+            <p class="timeline__desc">DNN&ndash;brain alignment in vision models.</p>
+          </div>
+        </div>
+        <div class="timeline__item fade-in">
+          <span class="timeline__year">2024</span>
+          <div>
+            <p class="timeline__role">Participant</p>
+            <p class="timeline__org">Neuromatch Academy</p>
+            <p class="timeline__desc">Computational neuroscience curriculum &mdash; deep learning, linear models, neural data analysis.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-8)">
+        <a href="mailto:leilany@harvard.edu?subject=CV Request" class="btn btn--ghost">Request Full CV &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 Leilany Torres Diaz &nbsp;&middot;&nbsp; Built with intention &#10022;</p>
+      <nav class="footer__links" aria-label="Footer links">
+        <a href="https://github.com/Leilanyt" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/leilany-torres-diaz/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:leilany@harvard.edu">Email</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  var d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  var sun='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  var moon='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  if(t){t.innerHTML=d==='dark'?sun:moon;t.addEventListener('click',function(){d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');t.innerHTML=d==='dark'?sun:moon});}
+  var mob=document.getElementById('mobile-toggle'),menu=document.getElementById('nav-menu');
+  if(mob&&menu)mob.addEventListener('click',function(){var o=menu.classList.toggle('open');mob.setAttribute('aria-expanded',o);});
+  var secs=document.querySelectorAll('section[id]'),links=document.querySelectorAll('.nav__links a');
+  if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})});},{threshold:0.4});secs.forEach(function(s){obs.observe(s)});}
+})();
+</script>
+</body>
+</html>
